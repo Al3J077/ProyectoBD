@@ -2,47 +2,47 @@
 
 body {
     font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-            padding: 20px;
-            }
+    background-color: #f4f4f4;
+    padding: 20px;
+}
 
-            h1 {
-                color: #333;
-                }
+h1 {
+    color: #333;
+}
 
-                .productos {
-                    display: flex;
-                        flex-wrap: wrap;
-                            gap: 20px;
-                            }
+.productos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
 
-                            .producto {
-                                background: white;
-                                    border: 1px solid #ccc;
-                                        padding: 15px;
-                                            width: 200px;
-                                                text-align: center;
-                                                    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
-                                                    }
+.producto {
+    background: white;
+    border: 1px solid #ccc;
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+}
 
-                                                    button {
-                                                        padding: 8px 12px;
-                                                            background-color: #28a745;
-                                                                color: white;
-                                                                    border: none;
-                                                                        cursor: pointer;
-                                                                            margin-top: 10px;
-                                                                            }
+button {
+    padding: 8px 12px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
 
-                                                                            button:hover {
-                                                                                background-color: #218838;
-                                                                                }
+button:hover {
+    background-color: #218838;
+}
 
-                                                                                ul {
-                                                                                    list-style: none;
-                                                                                        padding-left: 0;
-                                                                                        }
+ul {
+    list-style: none;
+    padding-left: 0;
+}
 
-                                                                                        li {
-                                                                                            margin-bottom: 10px;
-                                                                                            }
+li {
+    margin-bottom: 10px;
+}
