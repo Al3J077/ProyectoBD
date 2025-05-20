@@ -26,6 +26,13 @@ $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 </form>
             </div>
         <?php endforeach; ?>
+        <?php if (isset($_SESSION['usuario'])): ?>
+    <p>Bienvenido, <?= $_SESSION['usuario']['nombre'] ?> | 
+    <a href="dashboard.php">Mi Perfil</a> | 
+    <a href="logout.php">Cerrar sesión</a></p>
+<?php else: ?>
+    <p><a href="login.php">Iniciar sesión</a> | <a href="register.php">Registrarse</a></p>
+<?php endif; ?>
     </div>
     <br>
     <a href="cart.php">Ver Carrito</a>

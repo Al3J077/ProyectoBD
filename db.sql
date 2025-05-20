@@ -131,3 +131,14 @@ INSERT INTO productos (id_categoria, nombre, descripcion, precio, stock, imagen)
 INSERT INTO usuarios (nombre, correo, contrasena, direccion, telefono, rol) VALUES
 ('Admin Principal', 'admin@example.com', '$2y$10$Kb3OzJpYRqVZtT7vXfQk.eFj6mMhHrWuP0aXeUwIzGzB7Dd', 'Calle Admin 123', '1234567890', 'admin'),
 ('Cliente Ejemplo', 'cliente@example.com', '$2y$10$Kb3OzJpYRqVZtT7vXfQk.eFj6mMhHrWuP0aXeUwIzGzB7Dd', 'Calle Cliente 456', '0987654321', 'cliente');
+
+USE tienda_zapatos;
+
+CREATE TABLE IF NOT EXISTS usuarios (
+    id_usuario INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    correo VARCHAR(100) NOT NULL UNIQUE,
+    contrasena VARCHAR(255) NOT NULL,
+    rol ENUM('cliente', 'admin') DEFAULT 'cliente',
+    fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
