@@ -2,7 +2,7 @@
 // functions.php
 
 function formatCOP($amount) {
-    return '$' . number_format($amount, 0, ',', '.') . ' COP';
+    return '$' . number_format($amount, 0, ',', '.') . ' USD';
 }
 
 $host = 'localhost';

@@ -1,6 +1,8 @@
-<?php
+<?php 
+session_start();
 include 'functions.php';
 
+// Obtener productos desde la base de datos
 $stmt = $pdo->query("SELECT * FROM productos");
 $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -13,28 +15,41 @@ $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Zapatos Disponibles</h1>
-    <div class="productos">
-        <?php foreach ($productos as $producto): ?>
-            <div class="producto">
-                <h2><?= htmlspecialchars($producto['nombre']) ?></h2>
-                <p>$<?= number_format($producto['precio'], 2) ?></p>
-                <form action="add_to_cart.php" method="post">
-                    <!-- 👇 Esta es la línea que debe estar corregida 👇 -->
-                    <input type="hidden" name="id_producto" value="<?= $producto['id_producto'] ?>">
-                    <button type="submit">Agregar al Carrito</button>
-                </form>
-            </div>
-        <?php endforeach; ?>
-        <?php if (isset($_SESSION['usuario'])): ?>
-    <p>Bienvenido, <?= $_SESSION['usuario']['nombre'] ?> | 
-    <a href="dashboard.php">Mi Perfil</a> | 
-    <a href="logout.php">Cerrar sesión</a></p>
-<?php else: ?>
-    <p><a href="login.php">Iniciar sesión</a> | <a href="register.php">Registrarse</a></p>
-<?php endif; ?>
+
+<h1>Zapatos Disponibles</h1>
+
+<!-- Mostrar los productos -->
+<div class="productos">
+    <?php foreach ($productos as $producto): ?>
+        <div class="producto">
+            <h2><?= htmlspecialchars($producto['nombre']) ?></h2>
+            <p><?= formatCOP($producto['precio']) ?></p>
+            <form action="add_to_cart.php" method="post">
+                <input type="hidden" name="id_producto" value="<?= $producto['id_producto'] ?>">
+                <button type="submit">Agregar al Carrito</button>
+            </form>
+        </div>
+    <?php endforeach; ?>
+</div>
+
+<br>
+<a href="cart.php"><button>Ver Carrito</button></a>
+
+<!-- Mostrar información del usuario -->
+<?php if (isset($_SESSION['usuario'])): ?>
+    <div style="margin-top: 30px; border-top: 1px solid #ccc; padding-top: 20px;">
+        <p><strong>Usuario:</strong> <?= htmlspecialchars($_SESSION['usuario']['nombre']) ?></p>
+        <p><strong>Correo:</strong> <?= htmlspecialchars($_SESSION['usuario']['correo']) ?></p>
+        <p><strong>Rol:</strong> <?= ucfirst($_SESSION['usuario']['rol']) ?></p>
+        <a href="dashboard.php"><button>Mi Perfil</button></a>
+        <a href="logout.php"><button>Cerrar Sesión</button></a>
     </div>
-    <br>
-    <a href="cart.php">Ver Carrito</a>
+<?php else: ?>
+    <div style="margin-top: 30px;">
+        <a href="login.php"><button>Iniciar Sesión</button></a>
+        <a href="register.php"><button>Registrarse</button></a>
+    </div>
+<?php endif; ?>
+
 </body>
 </html>
