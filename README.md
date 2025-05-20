@@ -1,7 +1,5 @@
 # ProyectoBD
 
-# ProyectoBD
-
 ProyectoBD es una aplicación web para una tienda de zapatos llamada **ZapasCOL**. La aplicación permite a los usuarios explorar productos, registrarse, iniciar sesión, agregar productos al carrito y realizar compras. Además, cuenta con un panel de administración para gestionar usuarios, productos y ver estadísticas.
 
 ## Estructura del Proyecto
