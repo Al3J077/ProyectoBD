@@ -142,3 +142,34 @@ CREATE TABLE IF NOT EXISTS usuarios (
     rol ENUM('cliente', 'admin') DEFAULT 'cliente',
     fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+UPDATE productos SET imagen = 'nike_air.jpg' WHERE id_producto = 1;
+UPDATE productos SET imagen = 'adidas_ultra.jpg' WHERE id_producto = 2;
+UPDATE productos SET imagen = 'timberland.jpg' WHERE id_producto = 3;
+UPDATE productos SET imagen = 'columbia_sandals.jpg' WHERE id_producto = 4;
+UPDATE productos SET imagen = 'gucci_shoes.jpg' WHERE id_producto = 5;
+
+SELECT id_producto, nombre FROM productos;
+
+-- Tabla de auditoría
+CREATE TABLE IF NOT EXISTS auditoria_usuarios (
+    id_log INT AUTO_INCREMENT PRIMARY KEY,
+    accion VARCHAR(20) NOT NULL,
+    usuario_id INT,
+    usuario_nombre VARCHAR(100),
+    fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    detalles TEXT
+);
+
+-- Trigger para registrar eliminación de usuarios
+DELIMITER //
+CREATE TRIGGER after_usuario_delete 
+AFTER DELETE ON usuarios
+FOR EACH ROW
+BEGIN
+    INSERT INTO auditoria_usuarios (accion, usuario_id, usuario_nombre, detalles)
+    VALUES ('ELIMINACION', OLD.id_usuario, OLD.nombre, 
+            CONCAT('Usuario eliminado - Email: ', OLD.correo));
+END;
+//
+DELIMITER ;

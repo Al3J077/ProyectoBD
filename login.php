@@ -30,20 +30,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Iniciar Sesión</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h2>Iniciar Sesión</h2>
-    <?php if (!empty($error)) echo "<p style='color:red;'>$error</p>"; ?>
+<!-- Barra superior de usuario -->
+<div class="topbar">
+    <div class="topbar-content">
+        <div class="logo">
+            <a href="index.php" style="color: #fff; text-decoration: none; font-weight: bold;">ZapasCOL</a>
+        </div>
+        <div class="user-actions">
+            <a href="login.php"><button class="topbar-btn">Iniciar Sesión</button></a>
+            <a href="register.php"><button class="topbar-btn">Registrarse</button></a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <h2 style="text-align:center; color:#b80000;">Iniciar Sesión</h2>
+    <?php if (!empty($error)) echo "<p style='color:#b80000; text-align:center;'>$error</p>"; ?>
     <form method="post">
-        <label for="correo">Correo:</label><br>
-        <input type="email" name="correo" required><br><br>
+        <label for="correo">Correo:</label>
+        <input type="email" name="correo" required>
 
-        <label for="contrasena">Contraseña:</label><br>
-        <input type="password" name="contrasena" required><br><br>
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" name="contrasena" required>
 
-        <button type="submit">Iniciar Sesión</button>
+        <button type="submit" class="topbar-btn" style="width:100%;">Iniciar Sesión</button>
     </form>
-    <p>¿No tienes cuenta? <a href="register.php">Regístrate aquí</a></p>
+    <p style="text-align:center; margin-top:15px;">¿No tienes cuenta? <a href="register.php">Regístrate aquí</a></p>
+</div>
 </body>
 </html>

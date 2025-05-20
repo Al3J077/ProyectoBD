@@ -1,0 +1,519 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #121212;
+  color: #ffffff;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+a {
+  color: #e50914;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  background-color: #1f1f1f;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 2px solid #e50914;
+}
+
+header h1 {
+  color: #e50914;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  margin: 0 10px;
+  font-weight: 500;
+}
+
+button,
+input[type="submit"] {
+  background-color: #e50914;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+button:hover,
+input[type="submit"]:hover {
+  background-color: #b00610;
+}
+
+.card {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.card img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+form {
+  max-width: 450px;
+  margin: auto;
+  background-color: #1f1f1f;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 12px;
+  border-radius: 5px;
+  border: 1px solid #333;
+  background-color: #2a2a2a;
+  color: #fff;
+}
+
+/* Cambia el color de los textos y etiquetas en los formularios */
+form label,
+form input,
+form p,
+form h2 {
+  color: #fff; /* O el color que prefieras, por ejemplo #b80000 para rojo */
+}
+
+/* Si quieres que los placeholders también sean blancos: */
+form input::placeholder {
+  color: #ccc;
+  opacity: 1;
+}
+
+/* Barra superior */
+.topbar {
+  width: 100%;
+  background: #b80000; /* Rojo fuerte */
+  color: #fff;
+  padding: 0;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.07);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.topbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 10px 20px;
+}
+.logo {
+  font-size: 1.5em;
+  letter-spacing: 2px;
+}
+.user-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.user-name {
+  margin-right: 10px;
+  color: #fff;
+}
+.topbar-btn {
+  background: #111;
+  color: #fff;
+  border: none;
+  padding: 7px 16px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.topbar-btn:hover {
+  background: #b80000;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+/* Otros estilos sugeridos para la página */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #000000;
+  color: #4d1818;
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2 {
+  text-align: center;
+  color: #b80000;
+}
+.productos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin: 30px 0;
+}
+.producto {
+  background: #8a3434;
+  border: 1px solid #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  width: 220px;
+  box-shadow: 0 2px 8px rgba(238, 41, 41, 0.932);
+  text-align: center;
+}
+.producto h2 {
+  color: #111;
+}
+.producto button {
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.2s;
+}
+.producto button:hover {
+  background: #ffffff;
+  color: #850404;
+}
+
+.producto-img {
+  width: 100%;
+  max-width: 180px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+a button {
+  background: #111;
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+a button:hover {
+  background: #b80000;
+  color: #fff;
+}
+.user-info {
+  margin: 30px auto 0 auto;
+  max-width: 400px;
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+  color: #111;
+}
+
+/* Carrito de compras */
+.carrito-container {
+  background: #1f1f1f;
+  border-radius: 10px;
+  padding: 30px 30px 40px 30px;
+  max-width: 600px;
+  margin: 40px auto 0 auto;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+}
+
+.carrito-title {
+  color: #b80000;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2em;
+  letter-spacing: 1px;
+}
+
+.carrito-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+
+.carrito-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2a2a2a;
+  color: #fff;
+  border-radius: 6px;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  font-size: 1.1em;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.carrito-item span:first-child {
+  flex: 1;
+  font-weight: 500;
+}
+
+.carrito-remove {
+  background: #b80000;
+  color: #fff;
+  border: none;
+  padding: 7px 14px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 15px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.carrito-remove:hover {
+  background: #fff;
+  color: #b80000;
+  border: 1px solid #b80000;
+}
+
+.carrito-total {
+  text-align: right;
+  color: #fff;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.carrito-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.button-carrito {
+  background: #b80000;
+  color: #fff;
+  border: none;
+  padding: 10px 28px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1em;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.button-carrito:hover {
+  background: #fff;
+  color: #b80000;
+  border: 2px solid #b80000;
+}
+
+.carrito-vacio {
+  color: #fff;
+  text-align: center;
+  font-size: 1.1em;
+  margin: 40px 0 30px 0;
+}
+
+.ver-carrito-container {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0 0 0;
+}
+
+.ver-carrito-btn {
+  display: inline-flex;
+  align-items: center;
+  background: #b80000;
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1.1em;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  transition: background 0.2s, color 0.2s;
+  gap: 10px;
+}
+
+.ver-carrito-btn:hover {
+  background: #fff;
+  color: #b80000;
+  border: 2px solid #b80000;
+}
+
+.carrito-icono {
+  font-size: 1.2em;
+  margin-right: 6px;
+}
+.precio-zapatilla {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.1em;
+  margin: 10px 0;
+}
+/* Estilos para el Panel de Administración */
+.admin-panel {
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.admin-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  background: #2d2d2d;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.stat-card h3 {
+  margin: 0 0 10px 0;
+  color: #b80000;
+}
+
+.stat-card p {
+  font-size: 1.5em;
+  margin: 0;
+  color: #fff;
+}
+
+.admin-table,
+.logs-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background: #2d2d2d;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.admin-table th,
+.logs-table th {
+  background: #b80000;
+  color: #fff;
+  padding: 12px;
+  text-align: left;
+}
+
+.admin-table td,
+.logs-table td {
+  padding: 12px;
+  border-bottom: 1px solid #3d3d3d;
+}
+
+.stock-warning {
+  color: #ff4444;
+  font-weight: bold;
+}
+
+.categoria-stats {
+  background: #2d2d2d;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.categoria-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #3d3d3d;
+}
+
+.categoria-item:last-child {
+  border-bottom: none;
+}
+/* Minimal Admin Styles */
+.admin-panel {
+  background: #000;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.admin-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.stats-grid {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  background: #222;
+  padding: 15px;
+  border: 1px solid #444;
+  width: 200px;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th,
+td {
+  padding: 10px;
+  border: 1px solid #444;
+  text-align: left;
+}
+
+h1,
+h2,
+h3 {
+  color: #b80000;
+}

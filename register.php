@@ -15,7 +15,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } elseif ($contrasena !== $confirmar_contrasena) {
         $error = "Las contraseñas no coinciden.";
     } else {
-        // Verificar si el correo ya existe
         $stmt = $pdo->prepare("SELECT * FROM usuarios WHERE correo = ?");
         $stmt->execute([$correo]);
         if ($stmt->rowCount() > 0) {
@@ -37,28 +36,43 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Registrarse</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h2>Registrarse</h2>
+<!-- Barra superior de usuario -->
+<div class="topbar">
+    <div class="topbar-content">
+        <div class="logo">
+            <a href="index.php" style="color: #fff; text-decoration: none; font-weight: bold;">ZapasCOL</a>
+        </div>
+        <div class="user-actions">
+            <a href="login.php"><button class="topbar-btn">Iniciar Sesión</button></a>
+            <a href="register.php"><button class="topbar-btn">Registrarse</button></a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <h2 style="text-align:center; color:#b80000;">Registrarse</h2>
     <?php if (!empty($error)): ?>
-        <p style="color:red;"><?= $error ?></p>
+        <p style="color:#b80000; text-align:center;"><?= $error ?></p>
     <?php endif; ?>
     <form method="post">
-        <label for="nombre">Nombre:</label><br>
-        <input type="text" name="nombre" required><br><br>
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" required>
 
-        <label for="correo">Correo:</label><br>
-        <input type="email" name="correo" required><br><br>
+        <label for="correo">Correo:</label>
+        <input type="email" name="correo" required>
 
-        <label for="contrasena">Contraseña:</label><br>
-        <input type="password" name="contrasena" required><br><br>
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" name="contrasena" required>
 
-        <label for="confirmar_contrasena">Confirmar Contraseña:</label><br>
-        <input type="password" name="confirmar_contrasena" required><br><br>
+        <label for="confirmar_contrasena">Confirmar Contraseña:</label>
+        <input type="password" name="confirmar_contrasena" required>
 
-        <button type="submit">Registrarse</button>
+        <button type="submit" class="topbar-btn" style="width:100%;">Registrarse</button>
     </form>
-    <p>¿Ya tienes cuenta? <a href="login.php">Inicia sesión aquí</a></p>
+    <p style="text-align:center; margin-top:15px;">¿Ya tienes cuenta? <a href="login.php">Inicia sesión aquí</a></p>
+</div>
 </body>
 </html>
